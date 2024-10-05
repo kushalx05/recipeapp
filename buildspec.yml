@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies, if any
+
+  pre_build:
+    commands:
+      - echo Pre-build phase: no actions required for static files
+
+  build:
+    commands:
+      - echo Build phase: no actions required for static files
+
+  post_build:
+    commands:
+      - echo Post-build phase: Preparing to upload files to S3
+
+artifacts:
+  files:
+    - '**/*'  # Include all files (HTML, CSS, JS, etc.)
+  discard-paths: yes
+
+# Optionally, you can upload the files to an S3 bucket or use a deployment stage to handle this.
